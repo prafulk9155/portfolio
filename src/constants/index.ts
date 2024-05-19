@@ -8,9 +8,9 @@ import type {
 } from "../types";
 
 import {
-  mobile,
+  // mobile,
   backend,
-  creator,
+  // creator,
   web,
   javascript,
   typescript,
@@ -24,17 +24,17 @@ import {
   mongodb,
   git,
   docker,
-  meta,
+  // meta,
   // starbucks,
   // tesla,
-  shopify,
+  // shopify,
   internshala,
   carrent,
   jobit,
   tripguide,
   threejs,
   devEng,
-  devops,
+  // devops,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
