@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
@@ -11,12 +10,6 @@ import { Header } from "../atoms/Header";
 const INITIAL_STATE = Object.fromEntries(
   Object.keys(config.contact.form).map((input) => [input, ""])
 );
-
-const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  templateId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
-};
 
 const Contact = () => {
   const formRef = useRef<React.LegacyRef<HTMLFormElement> | undefined>();
@@ -31,44 +24,45 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | undefined) => {
+  const sendEmail = (formData:any) => {
+    // This function simulates sending the email.
+    return new Promise((resolve, reject) => {
+      console.log("Sending email with the following data:", formData);
+      // Simulate a successful email sending after 1 second
+      setTimeout(() => {
+        // Uncomment the line below to simulate a sending error
+        // return reject("Failed to send email.");
+        return resolve("Email sent successfully!");
+      }, 1000);
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
     if (e === undefined) return;
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        {
-          form_name: form.name,
-          to_name: config.html.fullName,
-          from_email: form.email,
-          to_email: config.html.email,
-          message: form.message,
-        },
-        emailjsConfig.accessToken
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm(INITIAL_STATE);
-        },
-        (error) => {
-          setLoading(false);
-
-          console.log(error);
-          alert("Something went wrong.");
-        }
-      );
+    try {
+      await sendEmail({
+        form_name: form.name,
+        to_name: config.html.fullName,
+        from_email: form.email,
+        to_email: config.html.email,
+        message: form.message,
+      });
+      
+      alert("Thank you. I will get back to you as soon as possible.");
+      setForm(INITIAL_STATE);
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div
-      className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row`}
-    >
+    <div className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row`}>
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="bg-black-100 flex-[0.75] rounded-2xl p-8"

@@ -13,6 +13,7 @@ import {
 } from "./components";
 import { useEffect } from "react";
 import { config } from "./constants/config";
+import Codium from "./components/codium/codius";
 
 const App = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
+        {/* <Codium /> */}
         {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contact />
