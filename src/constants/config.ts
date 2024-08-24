@@ -68,8 +68,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript and
-      JavaScript, and expertise in frameworks like React, Node.js, and library like Angular. Skilled in Angular and React for frontend, Php and Node js for backend, and proficient in MySQL for database management. Extensive experience in DevOps, server administration, and comprehensive DBMS management.!`,
+      content: `I am a skilled software developer with experience in TypeScript and JavaScript, and expertise in React and Angular for frontend development. Proficient in Node.js,FastAPI and PHP for backend services and MySQL and MongoDB for database. I possess extensive experience in DevOps, server administration, and comprehensive DBMS management.`
     },
     experience: {
       p: "What I have done so far",
