@@ -12,7 +12,7 @@ import {
 } from "./components";
 import { useEffect } from "react";
 import { config } from "./constants/config";
-import Codium from "./components/codium/codius";
+// import Codium from "./components/codium/codius";
 
 const App = () => {
   useEffect(() => {
