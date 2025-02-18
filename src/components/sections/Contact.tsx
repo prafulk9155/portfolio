@@ -38,7 +38,7 @@ const Contact = () => {
 
         try {
             // Hit the API endpoint to send the email
-            const response = await fetch("https://centralized-api-production.up.railway.app/api/email/send-email", {
+            const response = await fetch("https://centralized-api.onrender.com/api/email/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
