@@ -26,6 +26,7 @@ import {
   mongodb,
   git,
   docker,
+  taxmann-logo,
   // meta,
   // starbucks,
   // tesla,
@@ -186,7 +187,7 @@ const experiences: TExperience[] = [
    {
     title: "Full Stack Developer",
     companyName: "Taxmann",
-    icon: oges,
+    icon: taxmann-logo,
     iconBg: "#383E56",
     date: " Mar 2025 - present",
     points: [
