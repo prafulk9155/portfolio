@@ -174,13 +174,27 @@ const experiences: TExperience[] = [
     companyName: "Oges Solution Pvt. Ltd.",
     icon: oges,
     iconBg: "#383E56",
-    date: "June 2023 - Present",
+    date: "June 2023 - Mar 2025",
     points: [
      " Versatile professional with expertise in full-stack development, encompassing frontend and backend technologies."
       ,
      " Skilled in Angular and React for frontend, Node JS for backend, and proficient in MySQL for database management."
       ,
       "Extensive experience in DevOps, server administration, and comprehensive DBMS management."
+    ],
+  },
+   {
+    title: "Full Stack Developer",
+    companyName: "Taxmann",
+    icon: oges,
+    iconBg: "#383E56",
+    date: " Mar 2025 - present",
+    points: [
+     "Proficient in MEAN (MongoDB, Express.js, Angular, Node.js) and MERN (MongoDB, Express.js, React, Node.js) stacks, ensuring seamless development of scalable web applications."
+      ,
+     "Skilled in building robust RESTful APIs with Node.js and Express, integrating Elasticsearch for efficient full-text search and real-time data processing."
+      ,
+      "Expertise in MongoDB and MySQL for database management, along with hands-on experience in DevOps, CI/CD pipelines, Docker, and cloud deployment for scalable infrastructure."
     ],
   },
 ];
