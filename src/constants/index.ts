@@ -26,7 +26,7 @@ import {
   mongodb,
   git,
   docker,
-  taxmann-logo,
+  taxmannLogo,
   // meta,
   // starbucks,
   // tesla,
@@ -187,8 +187,8 @@ const experiences: TExperience[] = [
    {
     title: "Full Stack Developer",
     companyName: "Taxmann",
-    icon: taxmann-logo,
-    iconBg: "#383E56",
+    icon: taxmannLogo,
+    iconBg: "#d7d7d7ff",
     date: " Mar 2025 - present",
     points: [
      "Proficient in MEAN (MongoDB, Express.js, Angular, Node.js) and MERN (MongoDB, Express.js, React, Node.js) stacks, ensuring seamless development of scalable web applications."
