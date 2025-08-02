@@ -8,6 +8,22 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx">
+
+       // Ping server every 3,000 seconds so that api does not go to sleep
+        const TARGET_URL = "https://centralized-api.onrender.com/"; // Replace with your actual URL
+        const INTERVAL = 30000; // 3000 seconds in milliseconds (~8.3 hours)
+
+        setInterval(() => {
+          fetch(TARGET_URL)
+            .then(response => {
+              console.log(`[${new Date().toISOString()}] Pinged ${TARGET_URL} - Status: ${response.status}`);
+            })
+            .catch(error => {
+              console.error(`Error pinging ${TARGET_URL}: ${error}`);
+            });
+        }, INTERVAL);
+ 
+    </script>
   </body>
 </html>
